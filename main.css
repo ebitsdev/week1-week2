@@ -7,3 +7,16 @@ li {
 a {
     text-decoration: none;
 }
+body {
+    box-sizing: border-box;
+    border: 15px green solid;
+}
+div {
+    padding: 15px;
+}
+.my-inline-content{
+    font-size: 25px;
+    color: green;
+    text-decoration: underline;
+    display: block;
+}
