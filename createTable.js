@@ -4,7 +4,7 @@ const students = [
     ['First Name','Janae', 'Wenesh', 'JD', 'Paul'],
     ['Last Name','Leonard', 'Wolde', 'Hamilton', 'Vaughan'],
 ]
-
+// Better way? https://jsfiddle.net/tx8m9se0/
 function createTable(arr){
     // 1 - Create the table
     let tbl = document.createElement('table')
@@ -31,6 +31,7 @@ function createTable(arr){
     document.querySelector('body').appendChild(tbl)
 }
 // 10 - We call the function and pass it the students array created above
+
 createTable(students)
 /**
  * <html>
@@ -40,3 +41,33 @@ createTable(students)
  * </body>
  * </html>
  */
+function makeTable(arr){
+    let tbl = document.createElement('table')
+    // Create the two table variables for later use
+    let tblRow, tblCell
+    for (const row in arr[0]) {
+        //Create row
+        tblRow = tbl.insertRow(row)
+        // Column 1
+        tblCell = tblRow.insertCell(0)
+        tblCell.innerHTML = arr[0][row]
+       // Column 2
+       tblCell = tblRow.insertCell(1)
+       tblCell.innerHTML = arr[1][row]
+    }
+    document.body.appendChild(tbl)
+}
+makeTable(students)
+
+//Use builtin Vanilla JavaScript table methods to create the table
+function buildTable(arr){
+    let tbl = document.createElement('table')
+    let tblRow, tblCel
+    for (const row in arr[0]){
+        tbl.insertRow(row)
+        tblCel = tblRow.insertCell(0)
+        tblCel.innerHTML = arr[0][row]
+    }
+    document.body.appendChild(tbl)
+}
+buildTable(students)
